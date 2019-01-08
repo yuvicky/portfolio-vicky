@@ -1,0 +1,223 @@
+<!DOCTYPE html> 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Asap|Fjalla+One|Oxygen" rel="stylesheet">
+<style>
+	.blue-text{
+		color:blue;
+	}
+	h1{
+		
+		font-family: Raleway, sans-serif;
+	}
+	h2{
+		font-family: Raleway, sans-serif;
+	}
+	h3{ /*for image gallery*/
+		font-size: 20px;
+		font-family: Raleway, sans-serif;
+	}
+	h4{
+		font-size: 12px;
+		font-family: Raleway, sans-serif;
+	}
+	h5{
+		font-family: Raleway, sans-serif;
+		font-weight: bold;
+	}
+	p,li {
+		font-family: Raleway, sans-serif;
+	}
+	
+
+	.smaller-image{
+		width: 200px;
+		
+	}
+	.circular-border{
+		border-color: #AF53E5;
+		border-width: 2px;
+		border-style: solid;
+		border-radius: 50%;
+	}
+	.blue-color{
+		background-color: #DFF6FD;
+	}
+	.link{
+		font-family: Raleway;
+		color: black;
+	}		
+	.link:hover{
+		font-family: Raleway;
+		color: blue;
+	}	
+	.text{
+		background-color: white;
+		padding: 10px;
+	}
+	.row{
+		margin: 0px;
+	}
+	.column{
+		float: left;
+		width: 23.2%;
+	}
+	.row,
+	.row > .column {
+	  padding: 8px;
+	}
+	.typewrite{
+		color:#8921bd;
+	}
+
+
+
+</style>
+
+<head>
+	<script>
+	var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+</head>
+
+<body class="blue-color">
+<div style="text-align: center">
+<img class="smaller-image circular-border" src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/29468641_964766610357836_5285908674588442624_n.jpg?_nc_cat=100&_nc_ht=scontent-lax3-1.xx&oh=85c27d12490025ece137fcacf0eaf1f2&oe=5CA95458" alt="A self-portrait is unavailable at this time."><br>
+
+
+<h1>
+Vicky Yu | 
+<a class="typewrite" data-period="2000" data-type='["Programmer.", "Innovator.", "Trojan."]'>
+<span class="wrap"></span>
+</a>
+</script>
+</h1>
+
+<!--<form action="/url">
+<input type="text" placeholder="Search"><br>
+<button type="Submit">Submit</button>
+<br>
+<form>-->
+<a href="#projects" class="link">Skip to project section</a><br>
+<a href="#organizations" class="link">Skip to organizations that I am actively involved in.</a>
+</div>
+<!--<h2>.</h2>-->
+<main>
+<p>Welcome to my portfolio.</p>
+<!--<a target="_blank" href="https://www.linkedin.com/in/vickyyu1/" class="link"> This is my LinkedIn profile.</a>-->
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="vickyyu1"><a class="LI-simple-link" href='https://www.linkedin.com/in/vickyyu1?trk=profile-badge'>Vicky Yu</a></div>
+<h2 id="projects">My Projects</h2>
+<div class="row">
+	<div class="column">
+		<div class="text">
+			<a target ="_blank" href="https://boldher.github.io/mod_boldHER/home.html"><img src="boldher.png" style="width:100%"  class="link"></a>
+			<h3>boldHER</h3>
+			<p>Girls Who Code Summer Immersion Program</p>
+			<h4>boldHER is a women empowerment website that aims to provide resources and a platform for women to support each other by asking and answering questions.</h4>
+			<h5>Softwares/Languages Used: HTML, CSS, JavaScript, Django Framework, MapBox API</h5>
+		</div>
+	</div>
+	<div class="column">
+		<div class="text">
+			<a target ="_blank" href="https://yuvicky.github.io/nostressdress/"><img src="pixel.png" style="width:100%"  class="link"></a>
+			<h3>No Stress Dress</h3>
+			<p>PixelHacks II Hackathon: Best Presentation</p>
+			<h4>No Stress Dress is a mobile application that allows users to not only have an app pick out their outfits, but also plan out outfits for the week, plan outfits for travel, wear rarely worn clothes more often, and online shop while adding fantasy items to a virtual closet.</h4>
+			<h5>Softwares/Languages Used: HTML, CSS, DropSource, Sketch</h5>
+		</div>
+	</div>	
+	<div class="column">
+		<div class="text">
+			<a target ="_blank" href="http://botlucky.tech/"><img src="botlucky.png" style="width:100%"  class="link"></a>
+			<h3>Botlucky</h3>
+			<p>Superposition II Hackathon: Best .tech Domain</p>
+			<h4>Botlucky is a website that combats food waste by allowing users to share food with people nearby. The website includes a google form embedded in map that pinpoints the the location of where the person who is sharing food is.</h4>
+			<h5>Softwares/Languages Used: HTML, CSS, GoogleMaps API, Photoshop</h5>
+		</div>
+	</div>	
+	<div class="column">
+		<div class="text">
+			<a target ="_blank" href="https://arcg.is/0Di0b0"><img src="wildfire.png" style="width:100%"  class="link"></a>
+			<h3>California Wildfires</h3>
+			<h4>California Wildfires is a WebMap that reflects upon three major wildfires in California in 2018 and presents a visual map of wildfire threat throughout California.</h4>
+			<h5>Softwares/Languages Used: ArcGIS Online (Geographic Information System software)</h5>
+		</div>
+	</div>	
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div>
+<h2 id="organizations">My organizations</h2>
+<ul>
+<li>Association of Computing Machinery - Mentorship Coordinator</li>
+<li>Society of Women Engineers - Student Ambassador</li>
+<p>Things I have done for the club:
+<ol>
+<li>Arrange a freshman workshop series to stimulate underclassmen involvement in Society of Women Engineers to address member retainment issues </li>
+<li>Organized a GoldieBlox Campaign and raised $1,390 to buy 200 sets of GoldieBlox sets for young girls from several local elementary schools and hospitals to encourage them to pursue engineering from a young age</li>
+<li>Mentor two local high school girls by providing them resources to achieve academic and professional success</li>
+</ol>
+</p>
+<li>VRSC (Virtual Reality Club)</li>
+<li>Splash SC - Public Relations Coordinator</li>
+<li>Hong Kong Student Association - Staff member</li>
+</ul>
+</div>
+</main>
+</body>
+</html>
